@@ -1,0 +1,124 @@
+/* Default (Mobile-First) Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Grid Setup (One column on mobile) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+figure {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+figcaption {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Tablet View (trigger at 772px) */
+@media (min-width: 772px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);  /* Two columns */
+  }
+
+  figure:last-child {
+      grid-column: span 2;  /* Last figure takes up both columns */
+      border-radius: 50%;    /* Circular shape */
+  }
+}
+
+/* Large Screen View (trigger at 992px) */
+@media (min-width: 992px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);  /* Two columns */
+  }
+
+  figure:nth-child(3n) {
+      grid-column: span 2;  /* Every third figure takes up both columns */
+  }
+
+  figure {
+      border-radius: 0;  /* Remove border radius */
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+      scroll-behavior: auto;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #333;
+      color: #e0e0e0;
+  }
+
+  figure {
+      background-color: #444;
+      color: #f0e68c;  /* Light yellowish color */
+      border: 2px solid #000;  /* Black border */
+  }
+
+  a {
+      color: #00bcd4;
+  }
+}
+
+/* Accessibility and Hover Effects */
+figure:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+a:hover {
+  color: #388E3C;
+}
